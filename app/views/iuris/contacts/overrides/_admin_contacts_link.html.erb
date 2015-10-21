@@ -1,0 +1,5 @@
+<li role="presentation" class="<%= active(iuris.admin_contacts_path) %>">
+	<%= link_to iuris.admin_contacts_path do %>
+		Contactos <span class="badge"><%= Iuris::Contacts::Contact.count %></span>
+	<% end %>
+</li>

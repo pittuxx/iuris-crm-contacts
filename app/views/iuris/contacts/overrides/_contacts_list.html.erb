@@ -1,0 +1,28 @@
+<div class="col-md-6">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			Últimos contactos
+		</div>
+		<table class="table">
+			<thead>
+				<th>ID</th>
+				<th>Apellido</th>
+				<th>Email</th>
+				<th>Creado</th>
+			</thead>
+			<tbody>
+			<% @contacts.ordered.limit(3).each do |contact| %>
+				<tr>
+					<td><%= contact.id %></td>
+					<td><%= contact.last_name %></td>
+					<td><%= contact.email %></td>
+					<td><%= contact.created_at.strftime("%d %b. %Y") %></td>
+				</tr>
+			<% end %>
+			</tbody>
+		</table>
+		<div class="panel-body text-center">
+			<%= link_to '-> Ir a contactos', iuris.contacts_path %>
+		</div>
+	</div>
+</div>

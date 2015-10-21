@@ -1,0 +1,12 @@
+<h2>New Contact</h2>
+
+<%= form_for([iuris, @contact]) do |f| %>
+<%= render 'form', f: f %>
+
+<div class="form-group">
+	<div>
+		<%= f.submit "Crear Contacto", class: 'btn btn-primary' %>
+		<%= link_to 'Volver', iuris.contacts_path, class: 'btn btn-default' %>
+	</div>
+</div>
+<% end %>

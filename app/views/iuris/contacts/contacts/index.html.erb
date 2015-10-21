@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Nuevo Contacto', iuris.new_contact_path, class: 'pull-right btn btn-primary' %>
+
+<h2>Listing Contacts</h2>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Mis Contactos</div>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <th>ID</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Empresa</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </thead>
+
+      <tbody>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= contact.id %></td>
+          <td><%= contact.first_name %></td>
+          <td><%= contact.last_name %></td>
+          <td><%= contact.company %></td>
+          <td><%= contact.email %></td>
+          <td><%= contact.phone %></td>
+          <td><%= link_to icon_user, [iuris, contact], title: 'Ir al usuario' %></td>
+          <td><%= link_to icon_edit, iuris.edit_contact_path(contact), title: 'Editar contacto' %></td>
+          <td><%= link_to icon_trash, [iuris, contact], title: 'Eliminar contacto', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>

@@ -1,0 +1,12 @@
+<h2>Editar Contacto</h2>
+<hr>
+
+<%= form_for([iuris, @contact]) do |f| %>
+<%= render 'form', f: f %>
+<div class="form-group">
+	<div>
+		<%= f.submit "Actualizar Contacto", class: 'btn btn-primary' %>
+		<%= link_to 'Volver', iuris.contacts_path, class: 'btn btn-default' %>
+	</div>
+</div>
+<% end %>

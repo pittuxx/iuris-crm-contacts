@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<h2><%= @contact.last_name %></h2>
+<hr>
+<div class="row">
+	<div class="col-md-8">
+		<strong>Nombres</strong>
+		<%= @contact.first_name %>
+		<br>
+		<strong>Apellidos</strong>
+		<%= @contact.last_name %>
+		<br>
+		<strong>Empresa</strong>
+		<%= @contact.company %>
+		<br>
+		<strong>Email</strong>
+		<%= @contact.email %>
+		<br>
+		<strong>Teléfono</strong>
+		<%= @contact.phone %>
+		<br>
+		<strong>Comentarios</strong>
+		<%= @contact.comments %>
+	</div>
+</div>
+<hr>
+
+<%= link_to 'Editar', iuris.edit_contact_path(@contact), class: 'btn btn-primary' %> 
+<%= link_to 'Volver', iuris.contacts_path, class: 'btn btn-default' %>
+
+<span data-iuris-hook="contacts_show"></span>

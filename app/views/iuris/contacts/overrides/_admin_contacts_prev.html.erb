@@ -1,0 +1,26 @@
+<div class="col-md-6">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			Últimos Contactos
+		</div>
+		<table class="table">
+			<thead>
+				<th>Nombres</th>
+				<th>Apellidos</th>
+				<th>Email</th>
+			</thead>
+			<tbody>
+			<% @contacts.limit(3).each do |contact| %>
+					<tr>
+						<td><%= contact.first_name %></td>
+						<td><%= contact.last_name %></td>
+						<td><%= contact.email %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<div class="panel-body text-center">
+			<%= link_to '-> Ir a Contactos', iuris.admin_contacts_path %>
+		</div>
+	</div>
+</div>
